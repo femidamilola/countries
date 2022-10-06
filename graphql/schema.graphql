@@ -16,6 +16,17 @@ type CountryRecord {
   year: Int
 }
 
+type Mutation {
+  createRecord(countryId: String!, population: Int!, year: Int!): Record!
+  deleteRecord(id: String!): Record!
+  message: MutationMessage!
+  updateRecord(countryId: String, id: String!, population: Int, year: Int): Record!
+}
+
+type MutationMessage {
+  message: String
+}
+
 type Query {
   countries: [Country]!
   records: [Record]!
