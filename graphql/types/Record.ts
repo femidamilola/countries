@@ -135,13 +135,6 @@ export const UpdateRecordMutation = extendType({
   },
 });
 
-export const MutationMessage = objectType({
-  name: "MutationMessage",
-  definition(t) {
-    t.string("message");
-  },
-});
-
 export const DeleteRecordMutation = extendType({
   type: "Mutation",
   definition(t) {
@@ -158,12 +151,6 @@ export const DeleteRecordMutation = extendType({
           },
         });
         return { ...queryResult, message: "Deleted successfully" };
-      },
-    });
-    t.nonNull.field("message", {
-      type: "MutationMessage",
-      resolve() {
-        return { message: "Deleted Successfully" };
       },
     });
   },
