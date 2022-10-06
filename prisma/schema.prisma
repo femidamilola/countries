@@ -14,14 +14,14 @@ model Country {
   id            String  @id @default(auto()) @map("_id") @db.ObjectId
   createdAt     DateTime? @db.Date
   country       String @unique
-  area          BigInt
+  area          Int
   record        Record[]
 }
 
 model Record {
   id             String  @id @default(auto()) @map("_id") @db.ObjectId
   year           Int
-  population     BigInt
+  population     Int
   country        Country @relation(fields: [countryId], references: [id])
   countryId      String @db.ObjectId
 }

@@ -1,6 +1,8 @@
 import { NextComponentType, NextPageContext } from "next";
 import App from "next/app";
 import "../styles/globals.css";
+import { ApolloProvider } from "@apollo/client";
+import apolloClient from "../lib/apollo";
 
 interface MyAppProps extends App {
   Component: NextComponentType<NextPageContext, any, {}>;
@@ -8,7 +10,11 @@ interface MyAppProps extends App {
 }
 
 function MyApp({ Component, pageProps }: MyAppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <ApolloProvider client={apolloClient}>
+      <Component {...pageProps} />
+    </ApolloProvider>
+  );
 }
 
 export default MyApp;
