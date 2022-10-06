@@ -65,7 +65,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div className="my-5 text-3xl">Countries</div>
+        <div className="my-5 text-3xl">Records</div>
 
         <div>
           {Array.from(years).map((y, index) => (
@@ -107,15 +107,9 @@ export default function Home() {
             </div>
           ))}
         </div>
-
-        <div>
-          <form>
-            <input />
-          </form>
-        </div>
       </main>
 
-      <footer className={styles.footer}>
+      {/* <footer className={styles.footer}>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
           target="_blank"
@@ -126,7 +120,7 @@ export default function Home() {
             <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
           </span>
         </a>
-      </footer>
+      </footer> */}
     </div>
   );
 }
